@@ -1,7 +1,5 @@
 package eu.codeacademy.javaua2.service;
 
-import com.fasterxml.jackson.core.exc.StreamReadException;
-import com.fasterxml.jackson.databind.DatabindException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import eu.codeacademy.javaua2.model.Car;
 import eu.codeacademy.javaua2.model.Person;
@@ -28,12 +26,24 @@ public class JsonExampleService {
         }
     }
 
-    public void basicDeserializationFromResources() {
+    public void basicDeserializationFromResourcesExample() {
         File carJsonFile = null;
         try {
             carJsonFile = FileUtils.getFileFromResource("car.json");
             Car carDeserialized = objectMapper.readValue(carJsonFile, Car.class);
             System.out.println(carDeserialized);
+        } catch (URISyntaxException | IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void basicCompositionExample() {
+        File json = null;
+        try {
+            json = FileUtils.getFileFromResource("personCar.json");
+
+            Person person = objectMapper.readValue(json, Person.class);
+            System.out.println(person);
         } catch (URISyntaxException | IOException e) {
             throw new RuntimeException(e);
         }

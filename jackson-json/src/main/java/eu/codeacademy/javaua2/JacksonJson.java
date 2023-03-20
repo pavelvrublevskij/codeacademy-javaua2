@@ -6,6 +6,7 @@ public class JacksonJson {
     public static void main(String[] args) {
         JsonExampleService jsonExampleService = new JsonExampleService();
         jsonExampleService.basicSerializeAndDeserializeExample();
-        jsonExampleService.basicDeserializationFromResources();
+        jsonExampleService.basicDeserializationFromResourcesExample();
+        jsonExampleService.basicCompositionExample();
     }
 }
