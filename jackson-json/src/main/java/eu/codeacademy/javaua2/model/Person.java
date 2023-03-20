@@ -1,7 +1,10 @@
 package eu.codeacademy.javaua2.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.StringJoiner;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Person {
 
     private String name;

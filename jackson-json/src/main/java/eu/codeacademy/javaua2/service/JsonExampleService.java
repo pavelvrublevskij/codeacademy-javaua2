@@ -1,5 +1,6 @@
 package eu.codeacademy.javaua2.service;
 
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import eu.codeacademy.javaua2.model.Car;
 import eu.codeacademy.javaua2.model.Person;
@@ -8,6 +9,8 @@ import eu.codeacademy.javaua2.utils.FileUtils;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
+
+import static com.fasterxml.jackson.core.JsonParser.Feature.IGNORE_UNDEFINED;
 
 public class JsonExampleService {
 
@@ -42,6 +45,18 @@ public class JsonExampleService {
         try {
             json = FileUtils.getFileFromResource("personCar.json");
 
+            Person person = objectMapper.readValue(json, Person.class);
+            System.out.println(person);
+        } catch (URISyntaxException | IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void missingClassVariableByJsonProperty() {
+        File json = null;
+        try {
+            json = FileUtils.getFileFromResource("personCar.json");
+//            objectMapper.configure(DeserializationFeature.FAIL_ON_IGNORED_PROPERTIES, false);  //TODO: investigate why this doesn't work
             Person person = objectMapper.readValue(json, Person.class);
             System.out.println(person);
         } catch (URISyntaxException | IOException e) {
