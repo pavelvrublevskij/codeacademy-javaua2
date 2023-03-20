@@ -11,6 +11,7 @@ public class Person {
     private int age;
     private boolean gender;
     private Car car;
+    private Adresss address2;
 
     public Person() {
     }
@@ -36,6 +37,10 @@ public class Person {
         return car;
     }
 
+    public Adresss getAddress2() {
+        return address2;
+    }
+
     @Override
     public String toString() {
         return new StringJoiner(", ", Person.class.getSimpleName() + "[", "]")
@@ -43,6 +48,7 @@ public class Person {
                 .add("age=" + age)
                 .add("gender=" + gender)
                 .add("car=" + car)
+                .add("address2=" + address2)
                 .toString();
     }
 }

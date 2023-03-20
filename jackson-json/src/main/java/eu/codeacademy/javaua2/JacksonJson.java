@@ -9,5 +9,6 @@ public class JacksonJson {
         jsonExampleService.basicDeserializationFromResourcesExample();
         jsonExampleService.basicCompositionExample();
         jsonExampleService.missingClassVariableByJsonProperty();
+        jsonExampleService.aa();
     }
 }

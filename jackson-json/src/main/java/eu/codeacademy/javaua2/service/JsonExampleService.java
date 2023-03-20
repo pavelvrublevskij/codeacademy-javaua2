@@ -63,4 +63,15 @@ public class JsonExampleService {
             throw new RuntimeException(e);
         }
     }
+
+    public void compositionWithEnumTypeExample() {
+        File json = null;
+        try {
+            json = FileUtils.getFileFromResource("personAddress.json");
+            Person person = objectMapper.readValue(json, Person.class);
+            System.out.println(person);
+        } catch (URISyntaxException | IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
