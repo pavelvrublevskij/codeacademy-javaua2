@@ -4,7 +4,7 @@ package eu.codeacademy.javaua2;
  * Hello world!
  *
  */
-public class App 
+public class JacksonJson
 {
     public static void main( String[] args )
     {
