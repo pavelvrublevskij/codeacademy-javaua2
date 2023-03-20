@@ -1,6 +1,7 @@
 package eu.codeacademy.javaua2.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.StringJoiner;
 
@@ -11,7 +12,8 @@ public class Person {
     private int age;
     private boolean gender;
     private Car car;
-    private Adresss address2;
+    @JsonProperty("address2")
+    private Adresss address;
 
     public Person() {
     }
@@ -38,7 +40,7 @@ public class Person {
     }
 
     public Adresss getAddress2() {
-        return address2;
+        return address;
     }
 
     @Override
@@ -48,7 +50,7 @@ public class Person {
                 .add("age=" + age)
                 .add("gender=" + gender)
                 .add("car=" + car)
-                .add("address2=" + address2)
+                .add("address2=" + address)
                 .toString();
     }
 }
