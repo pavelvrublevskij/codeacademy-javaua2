@@ -19,7 +19,7 @@ public class JsonExampleService {
     public void basicSerializeAndDeserializeExample() {
         Person person = new Person("Petras", 25);
 
-        File personJsonFile = new File("target/person.json");
+        File personJsonFile = new File("person.json");
         try {
             objectMapper.writeValue(personJsonFile, person);
             Person personDeserialized = objectMapper.readValue(personJsonFile, Person.class);
