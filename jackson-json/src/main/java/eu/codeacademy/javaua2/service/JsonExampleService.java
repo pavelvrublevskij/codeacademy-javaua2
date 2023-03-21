@@ -1,7 +1,9 @@
 package eu.codeacademy.javaua2.service;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import eu.codeacademy.javaua2.model.Car;
 import eu.codeacademy.javaua2.model.Person;
 import eu.codeacademy.javaua2.model.PersonChildrenMap;
@@ -13,11 +15,16 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
-import static com.fasterxml.jackson.core.JsonParser.Feature.IGNORE_UNDEFINED;
-
 public class JsonExampleService {
 
     final ObjectMapper objectMapper = new ObjectMapper();
+
+    public JsonExampleService() {
+        // Don't throw an exception when json has extra fields you are
+        // not serializing on. This is useful when you want to use a pojo
+        // for deserialization and only care about a portion of the json
+        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+    }
 
     public void basicSerializeAndDeserializeExample() {
         Person person = new Person("Petras", 25);
