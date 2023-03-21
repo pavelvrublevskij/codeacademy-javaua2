@@ -11,5 +11,6 @@ public class JacksonJson {
         jsonExampleService.missingClassVariableByJsonProperty();
         jsonExampleService.compositionWithEnumTypeExample();
         jsonExampleService.jsonWithArrayExample();
+        jsonExampleService.jsonWithMapExample();
     }
 }
