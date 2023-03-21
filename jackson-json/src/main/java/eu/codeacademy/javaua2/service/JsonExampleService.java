@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import eu.codeacademy.javaua2.model.Car;
 import eu.codeacademy.javaua2.model.Person;
+import eu.codeacademy.javaua2.model.PersonFinancialObligation;
 import eu.codeacademy.javaua2.utils.FileUtils;
 
 import java.io.File;
@@ -70,6 +71,18 @@ public class JsonExampleService {
             json = FileUtils.getFileFromResource("personAddress.json");
             Person person = objectMapper.readValue(json, Person.class);
             System.out.println(person);
+        } catch (URISyntaxException | IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void jsonWithArrayExample() {
+        File json = null;
+        try {
+            json = FileUtils.getFileFromResource("personFinOblg.json");
+            PersonFinancialObligation personFinancialObligation =
+                    objectMapper.readValue(json, PersonFinancialObligation.class);
+            System.out.println(personFinancialObligation);
         } catch (URISyntaxException | IOException e) {
             throw new RuntimeException(e);
         }

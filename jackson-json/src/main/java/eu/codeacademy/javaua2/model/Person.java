@@ -15,6 +15,7 @@ public class Person {
     @JsonProperty("address2")
     private Adresss address;
 
+
     public Person() {
     }
 
