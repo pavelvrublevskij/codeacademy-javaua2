@@ -6,6 +6,7 @@ import eu.codeacademy.javaua2.model.Car;
 import eu.codeacademy.javaua2.model.Person;
 import eu.codeacademy.javaua2.model.PersonChildrenMap;
 import eu.codeacademy.javaua2.model.PersonFinancialObligation;
+import eu.codeacademy.javaua2.model.PersonObligationMap;
 import eu.codeacademy.javaua2.utils.FileUtils;
 
 import java.io.File;
@@ -94,6 +95,16 @@ public class JsonExampleService {
         try {
             json = FileUtils.getFileFromResource("personChildrenMap.json");
             System.out.println(objectMapper.readValue(json, PersonChildrenMap.class));
+        } catch (URISyntaxException | IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void jsonWithMapObjectsExample() {
+        File json = null;
+        try {
+            json = FileUtils.getFileFromResource("personObligationMap.json");
+            System.out.println(objectMapper.readValue(json, PersonObligationMap.class));
         } catch (URISyntaxException | IOException e) {
             throw new RuntimeException(e);
         }

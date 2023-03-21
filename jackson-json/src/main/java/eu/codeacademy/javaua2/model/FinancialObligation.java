@@ -5,7 +5,7 @@ import java.util.StringJoiner;
 
 public class FinancialObligation {
     private String name;
-    private BigDecimal amount;
+    private BigDecimal amount = BigDecimal.ZERO;
 
     public FinancialObligation() {
     }

@@ -12,5 +12,6 @@ public class JacksonJson {
         jsonExampleService.compositionWithEnumTypeExample();
         jsonExampleService.jsonWithArrayExample();
         jsonExampleService.jsonWithMapExample();
+        jsonExampleService.jsonWithMapObjectsExample();
     }
 }
