@@ -10,6 +10,7 @@
     <name>javaua2-advanced</name>
     <modules>
         <module>jackson-json</module>
+        <module>junit</module>
     </modules>
 
     <properties>
@@ -27,5 +28,27 @@
             <artifactId>jackson-databind</artifactId>
             <version>${com.fasterxml.jackson.core.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.26</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.9.2</version>
+            <scope>test</scope>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.0</version>
+        </dependency>
+
     </dependencies>
 </project>
