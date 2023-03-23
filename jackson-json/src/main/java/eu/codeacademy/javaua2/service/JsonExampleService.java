@@ -26,7 +26,7 @@ public class JsonExampleService {
         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
     }
 
-    public void basicSerializeAndDeserializeExample() {
+    public Person basicSerializeAndDeserializeExample() {
         Person person = new Person("Petras", 25);
 
         File personJsonFile = new File("person.json");
@@ -37,17 +37,20 @@ public class JsonExampleService {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        return person;
     }
 
-    public void basicDeserializationFromResourcesExample() {
+    public Car basicDeserializationFromResourcesExample() {
         File carJsonFile = null;
+        Car car = new Car();
         try {
             carJsonFile = FileUtils.getFileFromResource("car.json");
-            Car carDeserialized = objectMapper.readValue(carJsonFile, Car.class);
-            System.out.println(carDeserialized);
+            car = objectMapper.readValue(carJsonFile, Car.class);
+            System.out.println(car);
         } catch (URISyntaxException | IOException e) {
             throw new RuntimeException(e);
         }
+        return car;
     }
 
     public void basicCompositionExample() {
