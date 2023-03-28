@@ -15,7 +15,7 @@ public class CPU {
     }
 
     @Value
-    public class RAM {
+    public static class RAM {
 
         double memory;
         String manufacturerName;
