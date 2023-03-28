@@ -7,6 +7,10 @@ public class CPU {
 
     double price;
 
+    public String printInfo() {
+        return new Info().get();
+    }
+
     @Value
     public class Processor {
 
@@ -19,5 +23,11 @@ public class CPU {
 
         double memory;
         String manufacturerName;
+    }
+
+    private class Info {
+        String get() {
+            return "Some Info about our price " + price;
+        }
     }
 }

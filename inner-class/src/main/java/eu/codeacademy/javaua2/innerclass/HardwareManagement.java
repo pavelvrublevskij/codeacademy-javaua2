@@ -1,5 +1,6 @@
 package eu.codeacademy.javaua2.innerclass;
 
+
 public class HardwareManagement {
 
     public void init() {
@@ -10,6 +11,7 @@ public class HardwareManagement {
         System.out.println(cpu);
         System.out.println(proc);
         System.out.println(ram);
+        System.out.println(cpu.printInfo());
     }
 
 }
