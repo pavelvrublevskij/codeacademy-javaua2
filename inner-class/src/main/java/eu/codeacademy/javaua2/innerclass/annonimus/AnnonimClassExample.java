@@ -2,18 +2,19 @@ package eu.codeacademy.javaua2.innerclass.annonimus;
 
 public class AnnonimClassExample {
 
-    public void init() {
-        this.doMath(
-                new TwoDigits() {
-                    @Override
-                    public int withTwoDigits(int first, int second) {
-                        return first + second;
-                    }
-                }
-        );
+    private int doMathSum(int first, int second) {
+        class MathSum implements TwoDigits {
+            @Override
+            public int withTwoDigits(int first, int second) {
+                return first + second;
+            }
+        }
+
+        MathSum mathSum = new MathSum();
+        return mathSum.withTwoDigits(first, second);
     }
 
-    private void doMath(TwoDigits twoDigits) {
-        System.out.println(twoDigits.withTwoDigits(2, 5));
+    public void init() {
+        System.out.println(doMathSum(2, 5));
     }
 }
