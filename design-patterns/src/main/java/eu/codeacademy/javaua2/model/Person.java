@@ -5,19 +5,35 @@ import lombok.Getter;
 @Getter
 public class Person {
 
-    private String name;
-    private String surname;
+    // variables
+    // getter, setters, constructor
 
-    public Person(String name, String surname) {
-        this.name = name;
-        this.surname = surname;
+    private final String name;
+    private final String surname;
+
+    public Person(Builder builder) {
+        this.name = builder.name;
+        this.surname = builder.surname;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    public static class Builder {
+        // builder code with constructor, variables and setters
 
-    public void setSurname(String surname) {
-        this.surname = surname;
+        private String name;
+        private String surname;
+
+        public Builder name(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public Builder surname(String surname) {
+            this.surname = surname;
+            return this;
+        }
+
+        public Person build() {
+            return new Person(this);
+        }
     }
 }
