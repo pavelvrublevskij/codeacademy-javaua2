@@ -11,6 +11,7 @@
     <modules>
         <module>jackson-json</module>
         <module>junit</module>
+        <module>inner-class</module>
     </modules>
 
     <properties>
