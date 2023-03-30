@@ -8,6 +8,8 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -207,5 +209,59 @@ public class CalculatorServiceTest {
         assertEquals(answer.getLeft(), -1.0);
         assertEquals(answer.getRight(), -6.0);
     }
+
+    @Test
+    void findSecondHighestNumberThreeNumbersTest() {
+        ArrayList<Integer> numbers = new ArrayList<>(Arrays.asList(2,4,3));
+        Integer number = calculatorService.findSecondHighestNumber(numbers);
+
+        assertEquals(number, 3);
+    }
+
+    @Test
+    void findSecondHighestNumberTwoNumbersTest() {
+        ArrayList<Integer> numbers = new ArrayList<>(Arrays.asList(2,3));
+        Integer number = calculatorService.findSecondHighestNumber(numbers);
+
+        assertEquals(number, 2);
+    }
+
+    @Test
+    void findSecondHighestNumberLessThanTwoNumbersTest() {
+
+        ArrayList<Integer> numbers = new ArrayList<>();
+
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
+            calculatorService.findSecondHighestNumberVadimas(numbers);
+        });
+
+        assertEquals(exception.getMessage(), "At least 2 numbers has to be present");
+
+    }
+
+    @Test
+    void findSecondHighestNumberLessThanTwoNumbersTestKarolis() {
+
+        ArrayList<Integer> numbers = new ArrayList<>(Arrays.asList(-10,-100,10));
+
+        Integer number = calculatorService.findSecondHighestNumberKarolis(numbers);
+
+        assertEquals(number, -10);
+
+    }
+
+
+
+    @Test
+    void findSecondHighestNumberLessThanTwoNumbersTestVadimas() {
+
+        ArrayList<Integer> numbers = new ArrayList<>(Arrays.asList(-10));
+
+        Integer number = calculatorService.findSecondHighestNumberKarolis(numbers);
+
+        assertEquals(number, -10);
+
+    }
+
 
 }
