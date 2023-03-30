@@ -1,5 +1,10 @@
+import model.CodeAcademyI;
+import model.Gender;
+import model.Student;
+
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -88,11 +93,12 @@ public class Main {
                 .filter((tempNumber) -> tempNumber / 2 == 0)
                 .collect(Collectors.toList());
 
-        List<String> words = new ArrayList<>(Arrays.asList("Zalgiris", "Saule", "Alus", "Sestadienis", "Pienas", "Duona"));
+        List<String> words = new ArrayList<>(Arrays.asList("Zalgiris", "Saule", "Alus", "Sestadienis", "Pienas", "Duona", "Duona"));
 
         Student goodStudent = new Student("Petras", "Grazulis", 3, Gender.MALE);
         Student badStudent = new Student("Karolis", "Blogietis", 4, Gender.MALE);
-        List<Student> studentGroup = new ArrayList<>(Arrays.asList(goodStudent, badStudent));
+        Student intermediateStudent = new Student("Romas", "Vidurinis", 2, Gender.MALE);
+        List<Student> studentGroup = new ArrayList<>(Arrays.asList(goodStudent, badStudent, intermediateStudent, intermediateStudent));
 
 
         /* map with strings example */
@@ -106,6 +112,93 @@ public class Main {
                  .stream()
                  .map(student1 -> student1.getName() + " " + student1.getSurname())
                  .forEach(student1 -> System.out.println(student1));
+
+         List<Integer> studentsCourses = studentGroup
+                 .stream()
+                 .map(student1 -> student1.getCourse())
+                 .collect(Collectors.toList());
+
+         /* filter example with Strings */
+         words
+                 .stream()
+                 .filter(word -> word.length() > 5)
+                 .forEach(word -> System.out.println(word));
+
+         /* filter example with objects */
+        studentGroup
+                .stream()
+                .filter(student1 -> student1.getCourse() > 3)
+                .forEach(student1 -> System.out.println(student1.getName() + " " + student1.getCourse()));
+
+
+        /* peek example with Strings */
+        words
+                .stream()
+                .filter(word -> word.length() > 5)
+                .peek(word -> System.out.println("PEEK:" + word))
+                .filter(word -> word.length() % 2 == 0)
+                .forEach(word -> System.out.println(word));
+
+        /* sorted example with Strings */
+        words
+                .stream()
+                .sorted()
+                .forEach(word -> System.out.println(word));
+
+        /* sorted example with objects */
+        studentGroup
+                .stream()
+                .sorted(Comparator.comparing(Student::getCourse))
+                .forEach(student1 -> System.out.println(student1.getName() + " " + student1.getCourse()));
+
+        /* sorted reversed example with objects */
+        studentGroup
+                .stream()
+                .sorted(Comparator.comparing(Student::getCourse).reversed())
+                .forEach(student1 -> System.out.println(student1.getName() + " " + student1.getCourse()));
+
+        /* distinct example with Strings */
+        words
+                .stream()
+                .distinct()
+                .forEach(word -> System.out.println(word));
+
+        /* distinct example with objects */
+        studentGroup
+                .stream()
+                .distinct()
+                .forEach(student1 -> System.out.println(student1.getName() + " " + student1.getCourse()));
+
+        /* any match example with strings */
+        Boolean hasWordStartingWithS = words
+                .stream()
+                .anyMatch(word -> word.startsWith("S"));
+        System.out.println(hasWordStartingWithS);
+
+        Boolean allWordsLongerThanFour = words
+                .stream()
+                .allMatch(word -> word.length() > 4);
+        System.out.println(allWordsLongerThanFour);
+
+        /* count example with strings */
+        Long wordsEndingWithA = words
+                .stream()
+                .filter(word -> word.endsWith("a"))
+                .count();
+        System.out.println(wordsEndingWithA);
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

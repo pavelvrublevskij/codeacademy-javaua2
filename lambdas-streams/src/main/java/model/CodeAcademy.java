@@ -1,3 +1,5 @@
+package model;
+
 public class CodeAcademy implements CodeAcademyI {
     @Override
     public void study(Integer time) {

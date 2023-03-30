@@ -1,3 +1,5 @@
+package model;
+
 public interface CodeAcademyI {
 
     void study(Integer time);
