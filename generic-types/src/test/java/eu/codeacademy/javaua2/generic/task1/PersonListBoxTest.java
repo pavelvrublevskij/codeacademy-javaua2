@@ -1,7 +1,7 @@
 package eu.codeacademy.javaua2.generic.task1;
 
 import eu.codeacademy.javaua2.generic.ElementListBox;
-import eu.codeacademy.javaua2.generic.task1.model.Person;
+import eu.codeacademy.javaua2.generic.model.Person;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

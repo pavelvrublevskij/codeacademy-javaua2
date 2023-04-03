@@ -1,4 +1,4 @@
-package eu.codeacademy.javaua2.generic.task1.model;
+package eu.codeacademy.javaua2.generic.model;
 
 import lombok.Builder;
 import lombok.ToString;
