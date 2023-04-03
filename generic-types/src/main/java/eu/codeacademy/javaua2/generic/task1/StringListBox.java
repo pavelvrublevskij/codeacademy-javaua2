@@ -1,28 +1,12 @@
 package eu.codeacademy.javaua2.generic.task1;
 
+import eu.codeacademy.javaua2.generic.GenericListBox;
+
 import java.util.List;
 
-public class StringListBox implements ListBox<String> {
+public class StringListBox extends GenericListBox<String> {
 
-    private List<String> stringValues;
-
-
-    public StringListBox(List<String> stringValues) {
-        this.stringValues = stringValues;
-    }
-
-    @Override
-    public void addElements(String[] values) {
-        stringValues.addAll(List.of(values));
-    }
-
-    @Override
-    public void addElement(String value) {
-        this.stringValues.add(value);
-    }
-
-    @Override
-    public List<String> getElements() {
-        return this.stringValues;
+    public StringListBox(List<String> elements) {
+        super(elements);
     }
 }
