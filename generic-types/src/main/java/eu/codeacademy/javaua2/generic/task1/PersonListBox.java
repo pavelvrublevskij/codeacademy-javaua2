@@ -2,9 +2,7 @@ package eu.codeacademy.javaua2.generic.task1;
 
 import eu.codeacademy.javaua2.generic.task1.model.Person;
 
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class PersonListBox implements ListBox<Person> {
 
