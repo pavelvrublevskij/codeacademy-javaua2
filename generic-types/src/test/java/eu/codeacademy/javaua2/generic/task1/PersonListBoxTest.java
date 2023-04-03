@@ -1,5 +1,6 @@
 package eu.codeacademy.javaua2.generic.task1;
 
+import eu.codeacademy.javaua2.generic.ElementListBox;
 import eu.codeacademy.javaua2.generic.task1.model.Person;
 import org.junit.jupiter.api.Test;
 
@@ -17,7 +18,7 @@ class PersonListBoxTest {
         values[0] = Person.builder().name("Petras").surname("Petraitis").build();
         values[1] = Person.builder().name("Antanas").surname("Antanaitis").build();
 
-        PersonListBox stringListBox = new PersonListBox(new ArrayList<>());
+        ElementListBox<Person> stringListBox = new ElementListBox<Person>(new ArrayList<>());
         stringListBox.addElements(values);
 
         List<Person> personList = stringListBox.getElements();
@@ -38,7 +39,7 @@ class PersonListBoxTest {
                         person1
                 )
         );
-        PersonListBox stringListBox = new PersonListBox(initial);
+        ElementListBox<Person> stringListBox = new ElementListBox<Person>(initial);
         stringListBox.addElements(values);
 
         List<Person> personList = stringListBox.getElements();
@@ -50,7 +51,7 @@ class PersonListBoxTest {
 
     @Test
     void addElementWhenInitialListIsEmpty() {
-        PersonListBox stringListBox = new PersonListBox(new ArrayList<>());
+        ElementListBox<Person> stringListBox = new ElementListBox<Person>(new ArrayList<>());
         Person person1 = Person.builder().name("Zana").surname("Dark").build();
         stringListBox.addElement(person1);
 
@@ -66,7 +67,7 @@ class PersonListBoxTest {
                         Person.builder().name("Petras").surname("Petraitis").build()
                 )
         );
-        PersonListBox stringListBox = new PersonListBox(initial);
+        ElementListBox<Person> stringListBox = new ElementListBox<Person>(initial);
         Person person1 = Person.builder().name("Zana").surname("Dark").build();
         stringListBox.addElement(person1);
 

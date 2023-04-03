@@ -4,11 +4,11 @@ import eu.codeacademy.javaua2.generic.task1.ListBox;
 
 import java.util.List;
 
-public class GenericListBox<E> implements ListBox<E> {
+public class ElementListBox<E> implements ListBox<E> {
 
     private List<E> elements;
 
-    public GenericListBox(List<E> elements) {
+    public ElementListBox(List<E> elements) {
         this.elements = elements;
     }
 

@@ -1,5 +1,6 @@
 package eu.codeacademy.javaua2.generic.task1;
 
+import eu.codeacademy.javaua2.generic.ElementListBox;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -16,7 +17,7 @@ class StringListBoxTest {
         values[0] = "a";
         values[1] = "b";
 
-        StringListBox stringListBox = new StringListBox(new ArrayList<>());
+        ElementListBox<String> stringListBox = new ElementListBox<String>(new ArrayList<>());
         stringListBox.addElements(values);
 
         List<String> stringList = stringListBox.getElements();
@@ -32,7 +33,7 @@ class StringListBoxTest {
         values[1] = "b";
 
         List<String> initial = new ArrayList<>(Arrays.asList("Vienas", "Du"));
-        StringListBox stringListBox = new StringListBox(initial);
+        ElementListBox<String> stringListBox = new ElementListBox<String>(initial);
         stringListBox.addElements(values);
 
         List<String> stringList = stringListBox.getElements();
@@ -45,7 +46,7 @@ class StringListBoxTest {
 
     @Test
     void addElementWhenInitialListIsEmpty() {
-        StringListBox stringListBox = new StringListBox(new ArrayList<>());
+        ElementListBox<String> stringListBox = new ElementListBox<String>(new ArrayList<>());
         stringListBox.addElement("a");
 
         List<String> stringList = stringListBox.getElements();
@@ -56,7 +57,7 @@ class StringListBoxTest {
     @Test
     void addElementWhenInitialListIsNotEmpty() {
         List<String> initial = new ArrayList<>(Arrays.asList("Vienas", "Du"));
-        StringListBox stringListBox = new StringListBox(initial);
+        ElementListBox<String> stringListBox = new ElementListBox<String>(initial);
         stringListBox.addElement("a");
 
         List<String> stringList = stringListBox.getElements();
