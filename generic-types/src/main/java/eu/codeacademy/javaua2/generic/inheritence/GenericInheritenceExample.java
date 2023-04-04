@@ -9,26 +9,26 @@ public class GenericInheritenceExample {
     public void init() {
         draw(new Square());
         draw(new Rectangle());
-        draw(new String());
+//        draw(new String());   // Kompiliavimo klaida
         draw(new Figure(){});
 
         drawAsGeneric(new Square());
         drawAsGeneric(new Rectangle());
         drawAsGeneric(new String());
 
-        drawAsGeneric2(new Box<Square>());
-        drawAsGeneric2(new Box<Rectangle>());
-        drawAsGeneric2(new Box<String>());
+//        drawAsGeneric2(new Box<Square>());    // Kompiliavimo klaida
+//        drawAsGeneric2(new Box<Rectangle>()); // Kompiliavimo klaida
+//        drawAsGeneric2(new Box<String>());    // Kompiliavimo klaida
         drawAsGeneric2(new Box<Figure>());
 
         drawAsGeneric3(new Box<Square>());
         drawAsGeneric3(new Box<Rectangle>());
-        drawAsGeneric3(new Box<String>());
+//        drawAsGeneric3(new Box<String>()); // Kompiliavimo klaida
         drawAsGeneric3(new Box<Figure>());
 
         drawAsGeneric4(new Box<Square>());
-        drawAsGeneric4(new Box<Rectangle>());
-        drawAsGeneric4(new Box<String>());
+//        drawAsGeneric4(new Box<Rectangle>()); // Kompiliavimo klaida
+//        drawAsGeneric4(new Box<String>());    // Kompiliavimo klaida
         drawAsGeneric4(new Box<Figure>());
     }
 
