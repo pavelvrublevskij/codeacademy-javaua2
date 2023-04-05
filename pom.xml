@@ -15,6 +15,7 @@
         <module>design-patterns</module>
         <module>lambdas-streams</module>
         <module>generic-types</module>
+        <module>generic-types-practice</module>
     </modules>
 
     <properties>
