@@ -41,7 +41,6 @@ public class Team<T extends Player> implements Comparable<Team> {
         }
         else {
 //            opponentTeam.setWon(opponentTeam.getWon()+1);
-            opponentTeam.playMatch(null, theirScore, ourScore);
         }
 
     }

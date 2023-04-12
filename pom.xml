@@ -16,6 +16,7 @@
         <module>lambdas-streams</module>
         <module>generic-types</module>
         <module>generic-types-practice</module>
+        <module>kartojimas</module>
     </modules>
 
     <properties>
