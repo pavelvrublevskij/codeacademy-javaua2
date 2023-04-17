@@ -69,3 +69,22 @@ ALTER TABLE person ADD id serial;
 insert into person (name, surname, age)
 values ('Petras', 'Petraitis', null),
        ('Antanas', 'Antanaitis', 33, DEFAULT);
+
+ALTER TABLE person ADD primary key (id);
+-- ALTER TABLE person ADD CONSTRAINT person_id_pk PRIMARY KEY (id);
+
+
+CREATE TABLE IF NOT EXISTS public.auto
+(
+    id serial NOT NULL,
+    "number" character varying(10) NOT NULL,
+    person_id integer,
+    CONSTRAINT auto_id_pk PRIMARY KEY (id)
+);
+
+ALTER TABLE IF EXISTS public.auto
+    ADD CONSTRAINT auto_person_id_person_id_fkey FOREIGN KEY (person_id)
+        REFERENCES public.person (id) MATCH SIMPLE
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT
+        NOT VALID;
