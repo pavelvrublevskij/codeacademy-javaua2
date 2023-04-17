@@ -49,3 +49,15 @@ ALTER DEFAULT PRIVILEGES FOR ROLE postgres IN SCHEMA public
 
 ALTER DEFAULT PRIVILEGES FOR ROLE postgres IN SCHEMA public
     GRANT ALL ON SEQUENCES TO gr_app;
+
+
+CREATE TABLE public.person
+(
+    id bigint NOT NULL,
+    name character varying(20) NOT NULL,
+    surname character varying(50) NOT NULL,
+    age smallint
+);
+
+ALTER TABLE IF EXISTS public.person
+    OWNER to gr_app;
