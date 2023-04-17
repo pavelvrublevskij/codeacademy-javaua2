@@ -17,6 +17,7 @@
         <module>generic-types</module>
         <module>generic-types-practice</module>
         <module>kartojimas</module>
+        <module>database</module>
     </modules>
 
     <properties>
