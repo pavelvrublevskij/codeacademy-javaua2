@@ -65,3 +65,7 @@ ALTER TABLE IF EXISTS public.person
 
 ALTER TABLE person DROP id;
 ALTER TABLE person ADD id serial;
+
+insert into person (name, surname, age)
+values ('Petras', 'Petraitis', null),
+       ('Antanas', 'Antanaitis', 33, DEFAULT);
