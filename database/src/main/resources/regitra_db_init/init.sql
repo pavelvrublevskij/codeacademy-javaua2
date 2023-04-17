@@ -61,3 +61,7 @@ CREATE TABLE public.person
 
 ALTER TABLE IF EXISTS public.person
     OWNER to gr_app;
+
+
+ALTER TABLE person DROP id;
+ALTER TABLE person ADD id serial;
