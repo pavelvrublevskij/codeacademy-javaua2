@@ -1,13 +1,15 @@
 package eu.codeacademy.javaua2.model;
 
 import eu.codeacademy.javaua2.exception.InsufficientProductException;
+import lombok.NoArgsConstructor;
+import org.bson.codecs.pojo.annotations.BsonProperty;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
-
+@NoArgsConstructor
 public class Order {
-
+	@BsonProperty(value = "order_nr")
 	private String orderNr;
 	private HashMap<String, Integer> orderedProducts;
 	private OrderType type;
