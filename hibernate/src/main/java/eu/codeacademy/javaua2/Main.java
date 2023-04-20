@@ -1,55 +1,34 @@
 package eu.codeacademy.javaua2;
 
 import eu.codeacademy.javaua2.model.Student;
+import eu.codeacademy.javaua2.model.University;
 import eu.codeacademy.javaua2.service.StudentService;
-import eu.codeacademy.javaua2.service.TeamService;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import org.hibernate.boot.Metadata;
-import org.hibernate.boot.MetadataSources;
-import org.hibernate.boot.registry.StandardServiceRegistry;
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import org.hibernate.cfg.Configuration;
+import eu.codeacademy.javaua2.service.UniversityService;
 
 public class Main {
-    private static SessionFactory factory;
+
     public static void main(String[] args) {
 
-        try {
-            factory = new Configuration().configure().buildSessionFactory();
-        } catch (Throwable ex) {
-            System.err.println("Failed to create sessionFactory object." + ex);
-            throw new ExceptionInInitializerError(ex);
-        }
-
-
-        StandardServiceRegistry ssr = new StandardServiceRegistryBuilder().configure("src/main/resources/hibernate.cfg.xml").build();
-
-        Metadata meta = new MetadataSources(ssr).getMetadataBuilder().build();
-
-        SessionFactory createdFactory = meta.getSessionFactoryBuilder().build();
-        Session session = createdFactory.openSession();
-        Transaction transaction = session.beginTransaction();
-
-        Student naujas = new Student();
-        naujas.setName("Vardas");
-        naujas.setSurname("Pavarde");
-        session.persist(naujas);
-
-        transaction.commit();
-
         StudentService studentService = new StudentService();
-        TeamService teamService = new TeamService();
+        UniversityService universityService = new UniversityService();
+        Student newStudent = new Student();
+        newStudent.setName("Romanas");
+        newStudent.setSurname("Ramutis");
+        newStudent.setCourse(3);
+        studentService.createStudent(newStudent);
 
+        University university = new University(null, "KTU", 1922);
+        universityService.createUniversity(university);
 
-//        studentService.findAllStudents();
-//        teamService.findAllTeams();
-//        teamService.findAllTeamsByName("Zalg");
-//        studentService.findAllStudentsByCourse(3);
-//        teamService.findAllTeamsByName("Zalgiris");
-//        studentService.createStudent(20, "Naujas", "Studentas", 2, 8.64);
-        studentService.updateStudentCourse(2, 3);
+        studentService.findStudentById(13L);
+        universityService.findUniversityById(1L);
+
+        Student updateStudent = new Student();
+        updateStudent.setName("NAME_NEW");
+        updateStudent.setSurname("SURNAME_NEW");
+        updateStudent.setCourse(5);
+        studentService.updateStudentById(13L, updateStudent);
+
 
     }
 }

@@ -18,8 +18,8 @@
         <module>generic-types-practice</module>
         <module>kartojimas</module>
         <module>database</module>
+        <module>jdbc</module>
         <module>hibernate</module>
-        <module>hibernate_new</module>
     </modules>
 
     <properties>

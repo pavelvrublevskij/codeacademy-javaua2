@@ -6,24 +6,27 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Entity
-@Table(name = "Student_CA")
+@Table(name = "university")
 @Data
+@AllArgsConstructor
 @ToString
-public class Student {
+@NoArgsConstructor
+public class University {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "name", nullable = false)
-    private String name;
-    @Column(name = "surname")
-    private String surname;
-    @Column(name = "course")
-    private Integer course;
 
+    @Column(name = "name")
+    private String name;
+
+    @Column(name = "establishment_year")
+    private Integer establishmentYear;
 
 }

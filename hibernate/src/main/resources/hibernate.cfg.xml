@@ -18,5 +18,6 @@
 
         <!-- Annotated entity classes -->
         <mapping class="eu.codeacademy.javaua2.model.Student"/>
+        <mapping class="eu.codeacademy.javaua2.model.University"/>
     </session-factory>
 </hibernate-configuration>
