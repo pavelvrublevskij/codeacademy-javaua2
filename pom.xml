@@ -17,11 +17,9 @@
         <module>generic-types</module>
         <module>generic-types-practice</module>
         <module>kartojimas</module>
-<<<<<<< Updated upstream
         <module>database</module>
-=======
         <module>hibernate</module>
->>>>>>> Stashed changes
+        <module>hibernate_new</module>
     </modules>
 
     <properties>
