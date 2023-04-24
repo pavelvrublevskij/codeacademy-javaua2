@@ -7,8 +7,8 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>database</artifactId>
+    <artifactId>design</artifactId>
     <packaging>jar</packaging>
 
-    <name>database</name>
+    <name>design</name>
 </project>
