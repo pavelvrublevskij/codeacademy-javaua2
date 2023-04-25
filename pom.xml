@@ -20,6 +20,7 @@
         <module>database/design</module>
         <module>database/hibernate</module>
         <module>database/jdbc</module>
+        <module>database/hibernate2</module>
     </modules>
 
     <properties>
