@@ -8,9 +8,26 @@ import org.hibernate.Transaction;
 public class CrudExample {
 
     public static void main(String[] args) {
-        Session ss = DaoManagerHelper.getSession();
+        try(Session ss = DaoManagerHelper.getSession()) {
+            createNewEmployee(ss);
+            updateEmployee(ss);
+        }
+    }
 
-        createNewEmployee(ss);
+    private static void updateEmployee(Session ss) {
+        Transaction transaction = null;
+        try {
+            EmployeePojo employee = ss.get(EmployeePojo.class, 2L);
+            employee.setEmail("ona@test.lt");
+
+            transaction = ss.beginTransaction();
+            ss.merge(employee);
+            transaction.commit();
+        } finally {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+        }
     }
 
     private static void createNewEmployee(Session ss) {
@@ -30,7 +47,6 @@ public class CrudExample {
             if (transaction != null) {
                 transaction.rollback();
             }
-            ss.close();
         }
     }
 }
