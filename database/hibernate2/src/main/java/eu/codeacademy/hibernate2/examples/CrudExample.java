@@ -11,6 +11,22 @@ public class CrudExample {
         try(Session ss = DaoManagerHelper.getSession()) {
             createNewEmployee(ss);
             updateEmployee(ss);
+            deleteEmployee(ss);
+        }
+    }
+
+    private static void deleteEmployee(Session ss) {
+        Transaction transaction = null;
+        try {
+            EmployeePojo employee = ss.get(EmployeePojo.class, 1L);
+
+            transaction = ss.beginTransaction();
+            ss.remove(employee);
+            transaction.commit();
+        } finally {
+            if (transaction != null) {
+                transaction.rollback();
+            }
         }
     }
 
