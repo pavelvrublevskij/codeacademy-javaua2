@@ -1,6 +1,7 @@
 package eu.codeacademy.hibernate2.helper;
 
 import eu.codeacademy.hibernate2.pojo.EmployeePojo;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
@@ -12,4 +13,10 @@ public final class DaoManagerHelper {
 
         return cfg.buildSessionFactory();
     }
+
+    public static Session getSession() {
+        return getSessionFactory().openSession();
+    }
+
+
 }
