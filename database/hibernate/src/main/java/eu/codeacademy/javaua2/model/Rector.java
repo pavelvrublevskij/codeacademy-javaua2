@@ -6,34 +6,34 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Entity
-@Table(name = "university")
+@Table(name = "rector")
 @Data
-@AllArgsConstructor
-@ToString
 @NoArgsConstructor
-public class University {
+public class Rector {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name", unique = true)
+    @Column(name = "name")
     private String name;
 
-    @Column(name = "establishment_year")
-    private Integer establishmentYear;
+    @Column(name = "surname")
+    private String surname;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "rector_id")
-    private Rector rector;
+    @Column(name = "age")
+    private Integer age;
+
+    @OneToOne(mappedBy = "rector", cascade = CascadeType.ALL)
+    @ToString.Exclude
+    private University university;
+
 
 }
