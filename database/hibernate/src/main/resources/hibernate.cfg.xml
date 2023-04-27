@@ -20,5 +20,6 @@
         <mapping class="eu.codeacademy.javaua2.model.Student"/>
         <mapping class="eu.codeacademy.javaua2.model.University"/>
         <mapping class="eu.codeacademy.javaua2.model.Rector"/>
+        <mapping class="eu.codeacademy.javaua2.model.StudentContact"/>
     </session-factory>
 </hibernate-configuration>

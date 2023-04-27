@@ -7,12 +7,15 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+
+import java.util.List;
 
 @Entity
 @Table(name = "university")
@@ -35,5 +38,10 @@ public class University {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "rector_id")
     private Rector rector;
+
+    @OneToMany(cascade = CascadeType.MERGE, mappedBy = "university")
+    @ToString.Exclude
+    private List<Student> students;
+
 
 }

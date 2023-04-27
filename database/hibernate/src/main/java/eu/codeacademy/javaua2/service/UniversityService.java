@@ -49,7 +49,10 @@ public class UniversityService {
         University university = session.find(University.class, id);
 
 
-        Rector rector = session.find(Rector.class, rectorId);
+        Rector rector = new Rector();
+        rector.setName("new");
+        rector.setSurname("new");
+        session.persist(rector);
         university.setRector(rector);
 
         session.persist(university);
@@ -76,7 +79,22 @@ public class UniversityService {
 
         return results;
 
+    }
 
+
+    public University findUniversityName(String name) {
+
+        SessionFactory factory = HibernateUtil.getSessionFactory();
+        Session session = factory.openSession();
+
+        CriteriaBuilder cb = session.getCriteriaBuilder();
+        CriteriaQuery<University> cr = cb.createQuery(University.class);
+        Root<University> root = cr.from(University.class);
+        cr.select(root).where(cb.equal(root.get("name"), name));
+        Query<University> query = session.createQuery(cr);
+        University university = query.getSingleResult();
+
+        return university;
     }
 
     public void printRectorByUniversityName(String name) {

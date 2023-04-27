@@ -1,6 +1,7 @@
 package eu.codeacademy.javaua2.service;
 
 import eu.codeacademy.javaua2.model.Student;
+import eu.codeacademy.javaua2.model.University;
 import eu.codeacademy.javaua2.util.HibernateUtil;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
@@ -67,6 +68,11 @@ public class StudentService {
         cr.select(root).where(cb.equal(root.get("course"), course));
         Query<Student> query = session.createQuery(cr);
         List<Student> results = query.getResultList();
+
+
+        results
+                .stream()
+                .forEach(Student::toString);
 
         System.out.println(results.toString());
 
