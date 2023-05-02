@@ -1,7 +1,6 @@
 package eu.codeacademy.hibernate2.dao;
 
 import eu.codeacademy.hibernate2.pojo.EmployeeTypePojo;
-import lombok.RequiredArgsConstructor;
 import org.hibernate.Session;
 
 public class EmployeeTypeDao extends GenericDao<EmployeeTypePojo> {
