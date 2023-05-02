@@ -2,12 +2,14 @@ package eu.codeacademy.hibernate2.pojo;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -39,4 +41,8 @@ public class EmployeePojo {
 
     @Column(name="phone_number", length = 8)
     private String phoneNumber;
+
+    @ManyToOne(fetch = FetchType.EAGER)  // EAGER by default, bad!!!!
+    @JoinColumn(name = "employee_type_id")
+    private EmployeeTypePojo employeeTypePojo;
 }
