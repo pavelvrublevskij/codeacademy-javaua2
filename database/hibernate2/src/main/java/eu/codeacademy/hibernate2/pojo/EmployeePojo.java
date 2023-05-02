@@ -7,6 +7,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -15,6 +16,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "employee")
@@ -42,7 +46,11 @@ public class EmployeePojo {
     @Column(name="phone_number", length = 8)
     private String phoneNumber;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)  // by default EAGER
     @JoinColumn(name = "employee_type_id")
     private EmployeeTypePojo employeeTypePojo;
+
+    @ManyToMany(fetch = FetchType.LAZY)  // by default LAZY
+    @JoinColumn(name = "employee_cities")
+    private List<CityPojo> cities = new ArrayList<>();
 }

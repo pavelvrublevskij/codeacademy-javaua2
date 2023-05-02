@@ -1,5 +1,6 @@
 package eu.codeacademy.hibernate2.helper;
 
+import eu.codeacademy.hibernate2.pojo.CityPojo;
 import eu.codeacademy.hibernate2.pojo.EmployeePojo;
 import eu.codeacademy.hibernate2.pojo.EmployeeTypePojo;
 import org.hibernate.Session;
@@ -12,6 +13,7 @@ public final class DaoManagerHelper {
         Configuration cfg = HibernateConfigurationHelper.iniConfigurationPostgreSQL();
         cfg.addAnnotatedClass(EmployeePojo.class);
         cfg.addAnnotatedClass(EmployeeTypePojo.class);
+        cfg.addAnnotatedClass(CityPojo.class);
 
         return cfg.buildSessionFactory();
     }
