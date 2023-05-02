@@ -1,19 +1,16 @@
 package eu.codeacademy.hibernate2.dao;
 
 import eu.codeacademy.hibernate2.pojo.EmployeePojo;
-import jakarta.persistence.Query;
+import lombok.RequiredArgsConstructor;
 import org.hibernate.Session;
 
 import java.util.List;
 import java.util.Optional;
 
+@RequiredArgsConstructor
 public class EmployeeDao {
 
     private final Session session;
-
-    public EmployeeDao(Session session) {
-        this.session = session;
-    }
 
     public List<EmployeePojo> getAll() {
         return session.createQuery("FROM EmployeePojo", EmployeePojo.class).list();
