@@ -13,7 +13,8 @@ public class EmployeeDao extends GenericDao<EmployeePojo> {
 
     public List<EmployeePojo> getEmployees() {
         return getSession()
-                .createQuery("FROM EmployeePojo ep join fetch ep.employeeTypePojo", EmployeePojo.class)
+                .createQuery("FROM EmployeePojo ep " +
+                        "join fetch ep.employeeTypePojo", EmployeePojo.class)
                 .list();
     }
 }

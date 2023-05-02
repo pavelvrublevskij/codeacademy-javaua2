@@ -53,4 +53,8 @@ public class EmployeePojo {
     @ManyToMany(fetch = FetchType.LAZY)  // by default LAZY
     @JoinColumn(name = "employee_cities")
     private List<CityPojo> cities = new ArrayList<>();
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "current_city_id")
+    private CityPojo currentCity;
 }
