@@ -35,5 +35,4 @@ public class Rector {
     @ToString.Exclude
     private University university;
 
-
 }
