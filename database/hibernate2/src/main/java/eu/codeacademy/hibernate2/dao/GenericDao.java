@@ -1,5 +1,6 @@
 package eu.codeacademy.hibernate2.dao;
 
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.hibernate.Session;
 
@@ -7,6 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RequiredArgsConstructor
+@Getter
 public class GenericDao<T> {
 
     private final Session session;

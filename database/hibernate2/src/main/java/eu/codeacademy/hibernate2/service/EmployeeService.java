@@ -14,4 +14,8 @@ public class EmployeeService {
     public List<EmployeePojo> getAll() {
         return employeeDao.getAll();
     }
+
+    public List<EmployeePojo> getEmployees() {
+        return employeeDao.getEmployees();
+    }
 }

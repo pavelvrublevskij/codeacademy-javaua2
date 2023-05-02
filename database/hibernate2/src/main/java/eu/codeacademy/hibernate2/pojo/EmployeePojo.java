@@ -42,7 +42,7 @@ public class EmployeePojo {
     @Column(name="phone_number", length = 8)
     private String phoneNumber;
 
-    @ManyToOne(fetch = FetchType.EAGER)  // EAGER by default, bad!!!!
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "employee_type_id")
     private EmployeeTypePojo employeeTypePojo;
 }

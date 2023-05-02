@@ -13,8 +13,12 @@ public class DaoExample {
             EmployeeDao employeeDao = new EmployeeDao(ss, EmployeePojo.class);
             EmployeeService employeeService = new EmployeeService(employeeDao);
             // fetch all employee data
-            System.out.println("--------- FETCH EMPLOYEE DATA -------------");
+            System.out.println("--------- FETCH EMPLOYEE DATA EAGERLY -------------");
             employeeService.getAll().stream()
+                    .forEach(System.out::println);
+
+            System.out.println("--------- FETCH EMPLOYEE DATA LAZILY -------------");
+            employeeService.getEmployees().stream()
                     .forEach(System.out::println);
         }
     }
