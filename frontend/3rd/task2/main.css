@@ -17,14 +17,14 @@ li {
     font-size: 1.5rem;
 }
 
+li:nth-child(2n) {
+    background-color: lightgrey;
+}
+
 li:first-child,
 li:last-child {
     background-color: black;
     color: white;
-}
-
-li:nth-child(2n) {
-    background-color: lightgrey;
 }
 
 li:hover:not(:first-child):not(:last-child) {
