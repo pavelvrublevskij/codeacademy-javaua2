@@ -1,0 +1,24 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "Learning project for Code Academy Sessions",
+  "main": "app.js",
+  "scripts": {
+	"test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node app.js",
+	"css": "node-sass assets/scss/ -o dist/assets/css/",
+	"scss-watch": "node-sass --watch assets/scss -o assets/css"
+  },
+  "keywords": [],
+  "author": "Pavel Vrublevskij",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.2.3",
+    "express": "^4.18.2",
+    "jquery": "^3.6.4"
+  },
+  "devDependencies": {
+    "node-sass": "^8.0.0",
+    "nodemon": "^2.0.22"
+  }
+}
