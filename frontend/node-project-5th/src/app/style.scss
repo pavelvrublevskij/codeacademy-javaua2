@@ -1,0 +1,65 @@
+#good-company {
+  width: 800px;
+  background-color: gray;
+  border: 1px solid #006742;
+  border-radius: 5%;
+  padding: 20px;
+
+  .left {
+    width: 50%;
+
+    .images {
+      .img {
+        width: 70px;
+        height: 70px;
+        background-color: #4c4c9e;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .right {
+    width: 50%;
+
+    .big-img {
+      height: 190px;
+      background-color: #d85757;
+    }
+
+    .big-img-content {
+      height: 150px;
+    }
+
+    .t-small {
+      font-size: 12px;
+    }
+  }
+}
+
+.p-flex {
+  display: flex;
+  justify-content: space-around;
+
+  .row {
+    flex-direction: row;
+  }
+
+  &_column {
+    flex-direction: column;
+  }
+
+  &__column {
+    @extend .p-flex;
+    flex-direction: column;
+  }
+
+  .center {
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+}
+
+.p-gap-10 {
+  gap: 10px;
+}
