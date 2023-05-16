@@ -6,8 +6,7 @@
   "scripts": {
     "start": "node src/app.js",
     "build-css": "sass -w src/app:public/css",
-    "move-files": "node scripts/move-files.js",
-	"watch": "nodemon -e sass,js,html -x \"npm run build-css\""
+	"startw": "nodemon -e sass,html,js -x \"npm run build-css\" -x \"npm start\""
   },
   "keywords": [],
   "author": "Pavel Vrublevskij",
