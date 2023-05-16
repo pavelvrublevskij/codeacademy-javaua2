@@ -9,6 +9,7 @@ app.use("/css",	express.static(path.join(__dirname, "../node_modules/bootstrap/d
 app.use("/js",	express.static(path.join(__dirname, "../node_modules/bootstrap/dist/js")))
 app.use("/js", express.static(path.join(__dirname, "../node_modules/jquery/dist")))
 app.use("/js", express.static(path.join(__dirname, "./app")))
+app.use("/app", express.static(path.join(__dirname, "./app")))
 app.use("/style", express.static(path.join(__dirname, "../public/css")))
 app.use("/assets", express.static(path.join(__dirname, "./assets")))
 
