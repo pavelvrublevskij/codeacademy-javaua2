@@ -1,5 +1,6 @@
 @import './abstracts/variables';
 @import './abstracts/mixins';
+@import './abstracts/functions';
 
 #good-company {
   @include darkTheme;
@@ -7,6 +8,7 @@
   border: 1px solid $border-color;
   border-radius: 5%;
   padding: 20px;
+  opacity: themeIntensity(2);
 
   .left {
     width: 50%;
