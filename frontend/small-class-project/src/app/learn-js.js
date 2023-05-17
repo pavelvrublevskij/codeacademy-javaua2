@@ -1,4 +1,3 @@
-
 let content = document.getElementById('content');
 const value = 'Testassasdasas';
 content.innerHTML = `<p>${value}</p>`
@@ -46,6 +45,27 @@ data.forEach(obj => {
 	fontSize += 10;
 });
 
+
+
+/*let tableBody = table.createTBody();
+data.forEach(obj => {
+	let tableRow = tableBody.insertRow();
+	tableRow.insertCell().innerText = obj.id;
+	tableRow.insertCell().innerText = obj.name;
+	tableRow.insertCell().innerText = obj.surname;
+	tableRow.insertCell().innerText = obj.phone;
+});*/
+
+const generateTableData = (table, data) => {
+	let tableBody = table.createTBody();
+	data.forEach(obj => {
+		let tableRow = tableBody.insertRow();
+		Object.getOwnPropertyNames(obj).forEach(propName =>
+			tableRow.insertCell().innerText = obj[propName]);
+	})
+}
+
+
 let contentTable = document.getElementById('contentTable');
 let table = document.createElement('table');
 table.className = "table table-dark table-striped";
@@ -56,14 +76,5 @@ tableThRow.insertCell().innerText = "#";
 tableThRow.insertCell().innerText = "Name";
 tableThRow.insertCell().innerText = "Surname";
 tableThRow.insertCell().innerText = "Phone Nr.";
-
-let tableBody = table.createTBody();
-data.forEach(obj => {
-	let tableRow = tableBody.insertRow();
-	tableRow.insertCell().innerText = obj.id;
-	tableRow.insertCell().innerText = obj.name;
-	tableRow.insertCell().innerText = obj.surname;
-	tableRow.insertCell().innerText = obj.phone;
-	console.log(obj['phone']);
-});
+generateTableData(table, data);
 contentTable.appendChild(table);
