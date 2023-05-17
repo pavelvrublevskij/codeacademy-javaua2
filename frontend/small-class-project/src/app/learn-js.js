@@ -45,3 +45,25 @@ data.forEach(obj => {
 	contentObj.appendChild(paragraph);
 	fontSize += 10;
 });
+
+let contentTable = document.getElementById('contentTable');
+let table = document.createElement('table');
+table.className = "table table-dark table-striped";
+
+let tableTh = table.createTHead();
+let tableThRow = tableTh.insertRow();
+tableThRow.insertCell().innerText = "#";
+tableThRow.insertCell().innerText = "Name";
+tableThRow.insertCell().innerText = "Surname";
+tableThRow.insertCell().innerText = "Phone Nr.";
+
+let tableBody = table.createTBody();
+data.forEach(obj => {
+	let tableRow = tableBody.insertRow();
+	tableRow.insertCell().innerText = obj.id;
+	tableRow.insertCell().innerText = obj.name;
+	tableRow.insertCell().innerText = obj.surname;
+	tableRow.insertCell().innerText = obj.phone;
+	console.log(obj['phone']);
+});
+contentTable.appendChild(table);
