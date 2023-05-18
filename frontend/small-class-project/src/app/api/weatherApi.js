@@ -2,12 +2,12 @@ const divElementName = 'currentWeather';
 const apiKey = 'fd007d624cdfb5178dbfd4de1d381ed3';
 const OPENWEATHERMAP_URL = 'https://api.openweathermap.org/data/2.5';
 
-const getWeather = () => {
-	return axios
+const getWeather = async () => {
+	return await axios
 		.get(`${OPENWEATHERMAP_URL}/weather?lat=54.6872&lon=25.2797&appid=${apiKey}`)
 		.then(res => {
 			console.log(res.data);
-			renderWeatherInHtml(res.data);
+			return res.data;
 		})
 		.catch(error => {
 			if (error.response) {
@@ -24,4 +24,8 @@ const renderWeatherInHtml = (data) => {
 	divElem.appendChild(paragraph);
 }
 
-getWeather();
+const main = async () => {
+	renderWeatherInHtml(await getWeather());
+}
+
+main();
