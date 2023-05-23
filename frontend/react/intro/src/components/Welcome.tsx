@@ -1,5 +1,9 @@
 const Welcome = () => {
-	return <div>Hello, Coder!</div>
+	return (
+		<>
+			Hello, Coder!
+		</>
+	)
 }
 
 export default Welcome;
