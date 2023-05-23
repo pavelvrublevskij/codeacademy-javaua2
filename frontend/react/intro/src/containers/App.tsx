@@ -5,7 +5,7 @@ function App() {
 	const text = 'Coder';
 	return (
 		<div>
-			<Welcome />
+			<Welcome name={"Petras"} surname={"Petraitis"}/>
 		</div>
 	);
 }

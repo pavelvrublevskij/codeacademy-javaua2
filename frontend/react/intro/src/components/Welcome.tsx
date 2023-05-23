@@ -1,7 +1,7 @@
-const Welcome = () => {
+const Welcome = (props: any) => {
 	return (
 		<>
-			Hello, Coder!
+			Hello, {props.name} {props.surname}!
 		</>
 	)
 }
