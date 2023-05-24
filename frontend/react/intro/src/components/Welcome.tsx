@@ -1,9 +1,5 @@
-interface User {
-	name: string;      // required
-	surname?: string;  // ? - means optional
-}
 
-const Welcome = (props: User) => {
+const Welcome = (props: any) => {
 	return (
 		<>
 			Hello, {props.name} {props.surname}!
