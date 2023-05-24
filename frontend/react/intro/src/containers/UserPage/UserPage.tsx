@@ -1,6 +1,8 @@
+import "./UserPage.css";
+
 const UserPage = ({loginName}: any) => {
 	return (
-		<div>
+		<div className={"UserPage-backgroundColor"}>
 			Prisijungete kaip User
 			<div>Prisijungimo login yra {loginName}</div>
 		</div>

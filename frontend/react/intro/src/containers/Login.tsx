@@ -1,5 +1,5 @@
-import AdminPage from "./AdminPage";
-import UserPage from "./UserPage";
+import AdminPage from "./AdminPage/AdminPage";
+import UserPage from "./UserPage/UserPage";
 
 const Login = (props: any) => {
 
