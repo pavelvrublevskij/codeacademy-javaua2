@@ -1,8 +1,12 @@
 
-const Welcome = (props: any) => {
+const Welcome = ({
+  name,
+  surname,
+}: any) => {
+
 	return (
 		<>
-			Hello, {props.name} {props.surname}!
+			Hello, {name} {surname}!
 		</>
 	)
 }
