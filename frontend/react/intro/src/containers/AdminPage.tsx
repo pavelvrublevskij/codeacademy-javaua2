@@ -3,7 +3,7 @@ const AdminPage = (props: any) => {
 		<div>
 			Prisijungete kaip Admin
 			<div>Prisijgimo login yra {props.loginName}</div>
-			<div>Kiti propsai: {props.value1}, {props.value2}</div>
+			<div>Kiti propsai: {props.item1}, {props.item2}</div>
 		</div>
 	)
 }
