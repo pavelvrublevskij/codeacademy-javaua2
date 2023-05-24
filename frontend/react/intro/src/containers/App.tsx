@@ -1,10 +1,10 @@
 import React from 'react';
-import Login from "./Login";
-import Task2 from "../task/Task2";
+import HeaderContainer from "./Header/HeaderContainer";
 
 function App() {
 	return (
 		<>
+			<HeaderContainer/>
 		</>
 	);
 }
