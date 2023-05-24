@@ -8,7 +8,7 @@ function App() {
 			<br/>
 			pagal salyga ar admin ar user surenderint atitinkama rezultata (panaudoti skirtingus komponentus)
 			<hr/>
-			<Login value={'admin'}/>
+			<Login value={'admin'} item1={100} item2={200}/>
 		</div>
 	);
 }
