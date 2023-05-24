@@ -4,9 +4,10 @@ import Welcome from "../components/Welcome";
 function App() {
 	return (
 		<div>
-			<Welcome name={"Petras"} surname={"Petraitis"} />
-			<br/>
-			<Welcome name={"Antanas"} />
+			<Welcome user={{
+				name: "Petras",
+				surname: "Petraitis"
+			}} salary={1500}/>
 		</div>
 	);
 }

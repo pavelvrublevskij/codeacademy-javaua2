@@ -1,12 +1,17 @@
 
 const Welcome = ({
-  name,
-  surname,
+  user,
+  salary,
 }: any) => {
 
 	return (
 		<>
-			Hello, {name} {surname}!
+			<div>
+				Hello, {user.name} {user.surname}!
+			</div>
+			<div>
+				Your salary is <strong>{salary}</strong>
+			</div>
 		</>
 	)
 }
