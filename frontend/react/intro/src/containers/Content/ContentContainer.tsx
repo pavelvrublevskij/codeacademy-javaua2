@@ -3,17 +3,18 @@ import {useState} from "react";
 
 const ContentContainer = () => {
 
-	const [result, setResult] = useState("Test");
+	const [productName, setProductName] = useState('');
+	const [productQuantity, setProductQuantity] = useState(0);
+	const [productPrice, setProductPrice] = useState(0);
+	const [productDescr, setProductDescr] = useState('');
 
 	const onSubmitEvent = (event: any) => {
 		event.preventDefault();
-		console.log(event.target[0].value);
-		console.log(event.target[1].value);
-		console.log(event.target[2].value);
-		console.log(event.target[3].value);
 
-
-		setResult(event.target[0].value);
+		setProductName(event.target[0].value);
+		setProductQuantity(event.target[1].value);
+		setProductPrice(event.target[2].value);
+		setProductDescr(event.target[3].value);
 	}
 
 	return (
@@ -44,7 +45,16 @@ const ContentContainer = () => {
 				</Button>
 			</Form>
 
-			<div>{result}</div>
+			<div>
+				<hr/>
+				<div>
+					Created product:
+					<div>Name: <strong>{productName}</strong></div>
+					<div>Quantity: <strong>{productQuantity}</strong></div>
+					<div>Price: <strong>{productPrice}</strong></div>
+					<div>Description: <strong>{productDescr}</strong></div>
+				</div>
+			</div>
 		</>
 	);
 }
