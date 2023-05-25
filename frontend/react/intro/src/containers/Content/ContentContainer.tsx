@@ -3,18 +3,25 @@ import {useState} from "react";
 
 const ContentContainer = () => {
 
-	const [productName, setProductName] = useState('');
-	const [productQuantity, setProductQuantity] = useState(0);
-	const [productPrice, setProductPrice] = useState(0);
-	const [productDescr, setProductDescr] = useState('');
+	const [product, setProduct] = useState({
+		name: '',
+		quantity: 0,
+		price: 0,
+		description: ''
+	})
 
 	const onSubmitEvent = (event: any) => {
 		event.preventDefault();
 
-		setProductName(event.target[0].value);
-		setProductQuantity(event.target[1].value);
-		setProductPrice(event.target[2].value);
-		setProductDescr(event.target[3].value);
+		console.log(event.target[0].name);
+
+		setProduct({
+			...product,
+			[event.target[0].name]: event.target[0].value,
+			[event.target[1].name]: event.target[1].value,
+			[event.target[2].name]: event.target[2].value,
+			[event.target[3].name]: event.target[3].value,
+		});
 	}
 
 	return (
@@ -22,22 +29,22 @@ const ContentContainer = () => {
 			<Form onSubmit={onSubmitEvent}>
 				<Form.Group className='mb-3'>
 					<Form.Label>Product name</Form.Label>
-					<Form.Control placeholder='Write name'/>
+					<Form.Control name="name" placeholder='Write name'/>
 				</Form.Group>
 
 				<Form.Group className='mb-3' controlId='quantity'>
 					<Form.Label>Product quantity</Form.Label>
-					<Form.Control placeholder='Write quantity'/>
+					<Form.Control name="quantity" placeholder='Write quantity'/>
 				</Form.Group>
 
 				<Form.Group className='mb-3'>
 					<Form.Label>Product price</Form.Label>
-					<Form.Control placeholder='Write price'/>
+					<Form.Control name="price" placeholder='Write price'/>
 				</Form.Group>
 
 				<Form.Group className='mb-3'>
 					<Form.Label>Product description</Form.Label>
-					<Form.Control placeholder='Write description'/>
+					<Form.Control name="description" placeholder='Write description'/>
 				</Form.Group>
 
 				<Button variant='primary' type='submit'>
@@ -49,10 +56,10 @@ const ContentContainer = () => {
 				<hr/>
 				<div>
 					Created product:
-					<div>Name: <strong>{productName}</strong></div>
-					<div>Quantity: <strong>{productQuantity}</strong></div>
-					<div>Price: <strong>{productPrice}</strong></div>
-					<div>Description: <strong>{productDescr}</strong></div>
+					<div>Name: <strong>{product.name}</strong></div>
+					<div>Quantity: <strong>{product.quantity}</strong></div>
+					<div>Price: <strong>{product.price}</strong></div>
+					<div>Description: <strong>{product.description}</strong></div>
 				</div>
 			</div>
 		</>
