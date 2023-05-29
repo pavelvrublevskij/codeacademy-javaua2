@@ -6,6 +6,7 @@ import './App.css';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Home from "./Content/Home/Home";
 import DynamicPathContainer from "./Content/examples/DynamicPathContainer/DynamicPathContainer";
+import WeatherContainer from "./Content/WeatherContainer/WeatherContainer";
 
 function App() {
 	return (
@@ -16,6 +17,7 @@ function App() {
 					<Route path={'/'} element={ <Home />} />
 					<Route path={'/example'} element={ <ContentContainer /> } />
 					<Route path={'/example/dynamicPath/:userName'} element={ <DynamicPathContainer /> } />
+					<Route path={'/api/weather'} element={ <WeatherContainer /> } />
 				</Routes>
 				<FooterContainer/>
 			</div>
