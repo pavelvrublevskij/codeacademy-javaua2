@@ -5,6 +5,7 @@ import FooterContainer from "./Footer/FooterContainer";
 import './App.css';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Home from "./Content/Home/Home";
+import DynamicPathContainer from "./Content/examples/DynamicPathContainer/DynamicPathContainer";
 
 function App() {
 	return (
@@ -14,6 +15,7 @@ function App() {
 				<Routes>
 					<Route path={'/'} element={ <Home />} />
 					<Route path={'/example'} element={ <ContentContainer /> } />
+					<Route path={'/example/dynamicPath/:userName'} element={ <DynamicPathContainer /> } />
 				</Routes>
 				<FooterContainer/>
 			</div>
