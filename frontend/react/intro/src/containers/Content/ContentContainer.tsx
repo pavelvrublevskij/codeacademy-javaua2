@@ -3,6 +3,8 @@ import {useState} from "react";
 
 const ContentContainer = () => {
 
+	const [visible, setVisible] = useState(false);
+
 	const [product, setProduct] = useState({
 		name: '',
 		quantity: 0,
@@ -22,6 +24,8 @@ const ContentContainer = () => {
 			[event.target[2].name]: event.target[2].value,
 			[event.target[3].name]: event.target[3].value,
 		});
+
+		setVisible(true);
 	}
 
 	return (
@@ -52,16 +56,20 @@ const ContentContainer = () => {
 				</Button>
 			</Form>
 
-			<div>
-				<hr/>
-				<div>
-					Created product:
-					<div>Name: <strong>{product.name}</strong></div>
-					<div>Quantity: <strong>{product.quantity}</strong></div>
-					<div>Price: <strong>{product.price}</strong></div>
-					<div>Description: <strong>{product.description}</strong></div>
-				</div>
-			</div>
+			{
+				visible &&
+					<div>
+						<hr/>
+						<div>
+							Created product:
+							<div>Name: <strong>{product.name}</strong>
+							</div>
+							<div>Quantity: <strong>{product.quantity}</strong></div>
+							<div>Price: <strong>{product.price}</strong></div>
+							<div>Description: <strong>{product.description}</strong></div>
+						</div>
+					</div>
+			}
 		</>
 	);
 }
