@@ -1,16 +1,19 @@
 import {Button, Form} from 'react-bootstrap';
 import {useState} from "react";
+import './ContentContainer.css';
 
 const ContentContainer = () => {
-
 	const [visible, setVisible] = useState(false);
 
+	const [btnActive, setBtnActive] = useState(false);
 	const [product, setProduct] = useState({
 		name: '',
 		quantity: 0,
 		price: 0,
 		description: ''
 	})
+
+	const [btnMoveValue, setBtnMoveValue] = useState(0);
 
 	const onSubmitEvent = (event: any) => {
 		event.preventDefault();
@@ -23,8 +26,25 @@ const ContentContainer = () => {
 			[event.target.name]: event.target.value,
 		});
 
+		makeBtnActive(event.target);
 		setVisible(true);
 	}
+
+	const makeBtnActive = ({name, value}: any) => {
+		if (name === 'name' && value.length > 1) {
+			setBtnActive(true);
+		} else {
+			setBtnActive(false);
+		}
+	}
+
+	const onMuseEvent = (event: any) => {
+		console.log('mouse down')
+		if (event.taget.name === 'name'
+			&& event.target.value.length <= 10) {
+			setBtnMoveValue(200);
+		}
+	};
 
 	return (
 		<>
@@ -49,9 +69,14 @@ const ContentContainer = () => {
 					<Form.Control name="description" placeholder='Write description'/>
 				</Form.Group>
 
-				<Button variant='primary' type='submit'>
+				{btnActive
+					? <Button style={{marginLeft: `${btnMoveValue}px`}} variant='primary' type='submit' onMouseEnter={onMuseEvent}>
+						Submit
+					</Button>
+					: <Button style={{marginLeft: `${btnMoveValue}px`}} variant='primary' type='submit' disabled onMouseEnter={onMuseEvent}>
 					Submit
-				</Button>
+					</Button>
+				}
 			</Form>
 
 			{
