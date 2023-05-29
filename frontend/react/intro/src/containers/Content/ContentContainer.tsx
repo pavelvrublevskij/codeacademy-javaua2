@@ -14,15 +14,13 @@ const ContentContainer = () => {
 
 	const onSubmitEvent = (event: any) => {
 		event.preventDefault();
+		console.log(event);
+	}
 
-		console.log(event.target[0].name);
-
+	const onChangeEvent = (event: any) => {
 		setProduct({
 			...product,
-			[event.target[0].name]: event.target[0].value,
-			[event.target[1].name]: event.target[1].value,
-			[event.target[2].name]: event.target[2].value,
-			[event.target[3].name]: event.target[3].value,
+			[event.target.name]: event.target.value,
 		});
 
 		setVisible(true);
@@ -30,7 +28,7 @@ const ContentContainer = () => {
 
 	return (
 		<>
-			<Form onSubmit={onSubmitEvent}>
+			<Form onChange={onChangeEvent} onSubmit={onSubmitEvent}>
 				<Form.Group className='mb-3'>
 					<Form.Label>Product name</Form.Label>
 					<Form.Control name="name" placeholder='Write name'/>
