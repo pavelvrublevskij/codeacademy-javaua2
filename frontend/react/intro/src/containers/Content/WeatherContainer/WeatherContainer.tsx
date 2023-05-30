@@ -16,7 +16,7 @@ const WeatherContainer = () => {
 					console.log(error.response.data);
 				}
 			})
-	})
+	}, [])
 
 	const enrichWeatherData = (data: any) => {
 		setCelsiusValue(data.main.temp - 273);
