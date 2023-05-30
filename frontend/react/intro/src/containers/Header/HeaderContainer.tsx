@@ -16,6 +16,7 @@ const HeaderContainer = () => {
 						<Nav.Link to="/" as={ NavLink }>Home</Nav.Link>
 						<NavDropdown title="Api" id="navbarScrollingDropdown">
 							<NavDropdown.Item to="/api/weather" as={ NavLink }>Current Weather</NavDropdown.Item>
+							<NavDropdown.Item to="/api/pets" as={ NavLink }>Available Pets</NavDropdown.Item>
 						</NavDropdown>
 						<NavDropdown title="Examples" id="navbarScrollingDropdown">
 							<NavDropdown.Item to="/example" as={ NavLink }>New Product with hooks</NavDropdown.Item>
