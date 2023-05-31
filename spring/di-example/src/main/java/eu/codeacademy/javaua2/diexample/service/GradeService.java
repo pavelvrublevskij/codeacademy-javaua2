@@ -1,11 +1,14 @@
 package eu.codeacademy.javaua2.diexample.service;
 
-import eu.codeacademy.javaua2.diexample.dao.InternalMarksDao;
 import eu.codeacademy.javaua2.diexample.dao.MarksDao;
 
 public class GradeService {
 
-    private MarksDao marksDao = new InternalMarksDao();
+    private final MarksDao marksDao;
+
+    public GradeService(MarksDao marksDao) {
+        this.marksDao = marksDao;
+    }
 
     public Double avarageGrade () {
         Double sum = 0.0;
