@@ -1,7 +1,9 @@
 package eu.codeacademy.javaua2.diexample.service;
 
 import eu.codeacademy.javaua2.diexample.dao.MarksDao;
+import org.springframework.stereotype.Service;
 
+@Service
 public class GradeService {
 
     private final MarksDao marksDao;
