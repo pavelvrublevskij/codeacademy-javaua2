@@ -21,6 +21,7 @@
         <module>database/hibernate</module>
         <module>database/jdbc</module>
         <module>database/hibernate2</module>
+        <module>spring/di-example</module>
     </modules>
 
     <properties>
