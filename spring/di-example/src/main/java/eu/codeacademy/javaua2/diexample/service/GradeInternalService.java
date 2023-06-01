@@ -9,7 +9,7 @@ public class GradeInternalService {
 
     private final MarksDao marksDao;
 
-    public GradeInternalService(@Qualifier("marksInternalDao") MarksDao marksDao) {
+    public GradeInternalService(@Qualifier("externalMarksDao") MarksDao marksDao) {
         this.marksDao = marksDao;
     }
 
