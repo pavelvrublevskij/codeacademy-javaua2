@@ -12,8 +12,12 @@ import org.springframework.context.annotation.Configuration;
 public class SpringContextConfig {
 
     @Bean
-    public MarksDao marksDao() {
-//        return new InternalMarksDao();
+    public MarksDao marksInternalDao() {
+        return new InternalMarksDao();
+    }
+
+    @Bean
+    public MarksDao marksExternalDao() {
         return new ExternalMarksDao();
     }
 }
