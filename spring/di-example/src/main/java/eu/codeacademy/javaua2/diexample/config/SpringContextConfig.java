@@ -1,5 +1,6 @@
 package eu.codeacademy.javaua2.diexample.config;
 
+import eu.codeacademy.javaua2.diexample.dao.ExternalMarksDao;
 import eu.codeacademy.javaua2.diexample.dao.InternalMarksDao;
 import eu.codeacademy.javaua2.diexample.dao.MarksDao;
 import org.springframework.context.annotation.Bean;
@@ -12,6 +13,7 @@ public class SpringContextConfig {
 
     @Bean
     public MarksDao marksDao() {
-        return new InternalMarksDao();
+//        return new InternalMarksDao();
+        return new ExternalMarksDao();
     }
 }
